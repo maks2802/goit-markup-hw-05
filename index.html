@@ -471,29 +471,29 @@
         </div>
         <div class="footer-right">
           <p class="footer-right-subtitle">Subscribe</p>
-          <div class="footer-right-box">
-            <form class="footer-form">
-              <input
-                class="footer-input"
-                type="email"
-                name="email"
-                placeholder="E-mail"
-              />
-            </form>
+          <form class="footer-form">
+            <label class="footer-label" for="email"></label>
+            <input
+              class="footer-input"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="E-mail"
+            />
             <button class="footer-button" type="submit">
               Subscribe
-              <svg class="footer-button-icon" width="24" height="20">
+              <svg class="footer-button-icon" width="24" height="24">
                 <use href="./images/icons.svg#icon-telegram-1"></use>
               </svg>
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </footer>
-    <div class="backdrop">
+    <div class="backdrop is-open">
       <div class="modal">
         <button class="modal-close-btn" type="button">
-          <svg width="8" height="8">
+          <svg class="modal-close-btn-logo" width="8" height="8">
             <use href="./images/icons.svg#icon-close-btn"></use>
           </svg>
         </button>
@@ -508,66 +508,66 @@
                 name="user-name"
                 id="user-name"
               />
-              <svg class="modal-icon" width="12" height="12">
+              <svg class="modal-icon" width="18" height="24">
                 <use href="./images/icons.svg#icon-name-1"></use>
               </svg>
             </div>
           </div>
           <div class="modal-field">
-            <label class="modal-label" for="user-name">Phone</label>
+            <label class="modal-label" for="user-tel">Phone</label>
             <div class="modal-field-wrap">
               <input
                 class="modal-input"
                 type="tel"
                 name="user-tel"
-                id="user-name"
+                id="user-tel"
               />
-              <svg class="modal-icon" width="13" height="13">
+              <svg class="modal-icon" width="18" height="24">
                 <use href="./images/icons.svg#icon-tel-1"></use>
               </svg>
             </div>
           </div>
           <div class="modal-field">
-            <label class="modal-label" for="user-name">Email</label>
+            <label class="modal-label" for="user-email">Email</label>
             <div class="modal-field-wrap">
               <input
                 class="modal-input"
                 type="email"
                 name="user-email"
-                id="user-name"
+                id="user-email"
               />
-              <svg class="modal-icon" width="15" height="12">
+              <svg class="modal-icon" width="18" height="24">
                 <use href="./images/icons.svg#icon-email-1"></use>
               </svg>
             </div>
           </div>
-          <div class="modal-field">
-            <label class="modal-label" for="user-text">Comment</label>
+          <div class="modal-textarea">
+            <label class="modal-label" for="user-comment">Comment</label>
             <textarea
               class="modal-comment"
-              name="user-text"
-              id="user-text"
+              name="user-comment"
+              id="user-comment"
               placeholder="Text input"
             ></textarea>
           </div>
-          <input
-            class="modal-check visually-hidden"
-            type="checkbox"
-            name="terms"
-            id="terms"
-            value="true"
-          />
-          <label class="modal-check-text" for="terms"
-            ><span class="modal-check-tick">
-              <svg class="modal-icon-tick" width="10" height="8">
-                <use href="./images/icons.svg#icon-tick-1"></use>
-              </svg>
-            </span>
-            I accept the terms and conditions of the
-            <span class="modal-check-text-underline"
-              >Privacy Policy</span
-            ></label
-          >
+          <div class="modal-container">
+            <input
+              class="modal-check visually-hidden"
+              type="checkbox"
+              name="user-privacy"
+              id="user-privacy"
+              value="true"
+            />
+            <label class="modal-check-text" for="user-privacy"
+              ><span class="modal-check-tick">
+                <svg class="modal-icon-tick" width="10" height="8">
+                  <use href="./images/icons.svg#icon-tick-1"></use>
+                </svg>
+              </span>
+              I accept the terms and conditions of the
+              <a class="modal-check-link" href="">Privacy Policy</a>
+            </label>
+          </div>
           <button class="modal-btn" type="submit">Send</button>
         </form>
       </div>

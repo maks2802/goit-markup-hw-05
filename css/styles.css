@@ -489,12 +489,12 @@ img {
     margin-bottom: 16px;
 }
 
-.footer-right-box {
+.footer-form {
     display: flex;
     gap: 24px;
 }
 
-.footer-form {
+.footer-label {
 
 }
 
@@ -503,14 +503,11 @@ img {
     border-radius: 4px;
     width: 264px;
     height: 40px;
-    padding: 8px 16px;
+    padding-left: 16px;
     background-color: transparent;
     outline: transparent;
     resize: none;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-}
-
-.footer-input::placeholder {
     font-weight: 400;
     font-size: 12px;
     line-height: 2;
@@ -518,12 +515,14 @@ img {
     color: #fff;
 }
 
+.footer-input::placeholder {
+    color: #fff;
+}
+
 .footer-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-    gap: 16px;
     border-radius: 4px;
     padding: 8px 24px;
     min-width: 165px;
@@ -531,6 +530,7 @@ img {
     background-color: #4d5ae5;
     cursor: pointer;
     border: none;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -540,6 +540,7 @@ img {
 }
 
 .footer-button-icon {
+    margin-left: 16px;
 }
 
 .backdrop {
@@ -549,8 +550,7 @@ img {
     width: 100%;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
-    opacity: 0;
-    visibility: hidden;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
 }
 
@@ -563,26 +563,43 @@ img {
 .modal {
     border-radius: 4px;
     width: 408px;
-    height: 584px;
+    min-height: 584px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background-color: #fcfcfc;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 24px;
+    padding: 72px 24px 24px 24px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn {
-    margin-left: auto;
-    border-radius: 100%;
-    fill: #e7e9fc;
-    stroke-width: 1px;
-    stroke: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 24px;
+    right: 24px;
     width: 24px;
     height: 24px;
-    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:focus,
+.modal-close-btn:hover {
     border: none;
+    background-color: #404bbf;
+    fill: #ffffff
+}
+
+.modal-close-btn-logo {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-title {
@@ -607,6 +624,7 @@ img {
     letter-spacing: 0.04em;
     color: #8e8f99;
     margin-bottom: 4px;
+    display: block;
 }
 
 .modal-input {
@@ -618,6 +636,7 @@ img {
     padding-left: 38px;
     padding-right: 24px;
     outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input:focus {
@@ -634,9 +653,14 @@ img {
 
 .modal-icon {
     position: absolute;
-    left: 19px;
+    left: 16px;
     top: 50%;
     transform: translateY(-50%);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-textarea {
+    margin-bottom: 16px;
 }
 
 .modal-comment {
@@ -644,10 +668,15 @@ img {
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     height: 120px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
     background-color: transparent;
     padding: 8px 16px;
     outline: transparent;
     resize: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-comment:focus {
@@ -655,11 +684,11 @@ img {
 }
 
 .modal-comment::placeholder {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.4);
+}
+
+.modal-container {
+    margin-bottom: 24px;
 }
 
 .modal-check {
@@ -667,7 +696,6 @@ img {
 }
 
 .modal-check-text {
-    font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
@@ -675,22 +703,22 @@ img {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 24px;
 }
 
-.modal-check-text-underline {
+.modal-check-link {
     line-height: 1.33;
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: #4d5ae5;
 }
 
-.modal-check-text .modal-check-tick {
+.modal-check-tick {
     width: 16px;
     height: 16px;
     border-radius: 2px;
     border: 1px solid rgba(46, 47, 66, 0.4);
-    display: flex;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     fill: transparent;
@@ -699,22 +727,19 @@ img {
 .modal-check:checked + .modal-check-text .modal-check-tick {
     background-color: #404bbf;
     border: none;
-    fill: #fff;
+    fill: #F4F4FD;
 }
 
 .modal-btn {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: row;
-    gap: 10px;
+    display: block;
     margin: 0 auto;
     border-radius: 4px;
     padding: 16px 32px;
-    width: 169px;
+    min-width: 169px;
     height: 56px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     background-color: #4d5ae5;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -723,6 +748,7 @@ img {
     color: #fff;
     cursor: pointer;
     border: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
